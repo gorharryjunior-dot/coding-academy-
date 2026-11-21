@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHILL CODE | Coding Academy</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080f1e;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #0e192c;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #00d4ff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #00d4ff;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 8%;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #00d4ff;
+}
+
+.hero p {
+    color: #aab6c8;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    background: #00bfe8;
+    color: #06101c;
+    padding: 14px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.code-box {
+    background: #111f35;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #00d4ff;
+    width: 400px;
+    box-shadow: 0 0 30px #00d4ff20;
+}
+
+.code-box pre {
+    color: #00d4ff;
+    line-height: 2;
+    white-space: pre-wrap;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: #00d4ff;
+}
+
+.about {
+    background: #0e192c;
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    color: #b5c0d1;
+    line-height: 1.8;
+}
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.course {
+    background: #111f35;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #1c3553;
+    transition: .3s;
+}
+
+.course:hover {
+    transform: translateY(-8px);
+    border-color: #00d4ff;
+}
+
+.course h3 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.course p {
+    color: #aab6c8;
+    line-height: 1.7;
+}
+
+.course .btn {
+    margin-top: 15px;
+}
+
+.playground {
+    background: #0e192c;
+}
+
+.editor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    background: #080f1e;
+    color: #00d4ff;
+    padding: 20px;
+    border: 1px solid #29425e;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: monospace;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    background: white;
+    border-radius: 8px;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: #111f35;
+    color: white;
+    border: 1px solid #29425e;
+    border-radius: 6px;
+}
+
+footer {
+    text-align: center;
+    background: #0e192c;
+    padding: 25px;
+    color: #aab6c8;
+}
+
+@media(max-width: 850px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .code-box {
+        width: 100%;
+    }
+
+    .courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .courses,
+    .editor {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PHILL CODE</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#playground">Code</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <h1>Learn To Code.<br>
+        <span>Build Your Future.</span></h1>
+
+        <p>
+            Welcome to PHILL CODE Coding Academy.
+            Learn programming, develop your skills,
+            create websites and become a professional
+            software developer.
+        </p>
+
+        <a href="#courses" class="btn">Explore Courses</a>
+    </div>
+
+    <div class="code-box">
+        <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Future&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;I am a programmer.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        About <span>PHILL CODE</span>
+    </h2>
+
+    <p>
+        PHILL CODE is a programming learning platform
+        designed to help beginners and experienced
+        learners understand technology. Our goal is
+        to inspire young developers to think creatively,
+        solve problems and build amazing digital projects.
+    </p>
+
+</section>
+
+<!-- COURSES -->
+
+<section id="courses">
+
+    <h2 class="section-title">
+        Our <span>Programming Courses</span>
+    </h2>
+
+    <div class="courses">
+
+        <div class="course">
+            <h3>🌐 HTML</h3>
+            <p>Learn how to structure professional websites using HTML.</p>
+            <a href="#playground" class="btn">Start Learning</a>
+        </div>
+
+        <div class="course">
+            <h3>🎨 CSS</h3>
+            <p>Design beautiful websites with colors, layouts and animations.</p>
+            <a href="#playground" class="btn">Start Learning</a>
+        </div>
+
+        <div class="course">
+            <h3>⚡ JavaScript</h3>
+            <p>Make websites interactive with JavaScript programming.</p>
+            <a href="#playground" class="btn">Start Learning</a>
+        </div>
+
+        <div class="course">
+            <h3>🐍 Python</h3>
+            <p>Learn Python and explore software development and automation.</p>
+            <a href="#playground" class="btn">Start Learning</a>
+        </div>
+
+        <div class="course">
+            <h3>☕ Java</h3>
+            <p>Understand object-oriented programming using Java.</p>
+            <a href="#playground" class="btn">Start Learning</a>
+        </div>
+
+        <div class="course">
+            <h3>💻 Web Development</h3>
+            <p>Combine HTML, CSS and JavaScript to build complete websites.</p>
+            <a href="#playground" class="btn">Start Learning</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PLAYGROUND -->
+
+<section class="playground" id="playground">
+
+    <h2 class="section-title">
+        Online Code <span>Playground</span>
+    </h2>
+
+    <p style="text-align:center;margin-bottom:25px;color:#aab6c8">
+        Write HTML code and see your results instantly.
+    </p>
+
+    <div class="editor">
+
+        <div>
+            <h3 style="margin-bottom:15px">HTML Editor</h3>
+
+            <textarea id="code">&lt;h1&gt;Welcome to PHILL CODE!&lt;/h1&gt;
+&lt;p&gt;I am learning programming.&lt;/p&gt;
+&lt;button onclick="alert('Hello!')"&gt;Click Me&lt;/button&gt;</textarea>
+
+            <button class="btn" onclick="runCode()">Run Code ▶</button>
+        </div>
+
+        <div>
+            <h3 style="margin-bottom:15px;color:#00d4ff">Live Output</h3>
+            <iframe id="output" title="Code output" sandbox="allow-scripts"></iframe>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contact <span>Us</span>
+    </h2>
+
+    <form id="contactForm">
+
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+
+    </form>
+
+</section>
+
+<footer>
+    <p>© 2026 PHILL CODE Coding Academy</p>
+    <p>Designed for Future Programmers 💻</p>
+</footer>
+
+<script>
+
+// CODE PLAYGROUND
+
+function runCode() {
+    const code = document.getElementById("code").value;
+
+    const output = document.getElementById("output");
+
+    output.srcdoc = code;
+}
+
+runCode();
+
+// CONTACT FORM
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    alert("Thank you for contacting PHILL CODE!");
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
